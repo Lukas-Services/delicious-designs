@@ -75,7 +75,7 @@ const Hero = () => {
           </div>
           
           <div className="relative z-20 h-full flex items-center justify-center text-gray-100 px-4">
-            <div className="max-w-4xl text-center bg-black/50 p-6 rounded-lg">
+            <div className="max-w-4xl text-center">
               <h1 
                 className="text-5xl md:text-7xl font-serif font-semibold mb-4 drop-shadow-lg animate-fade-up"
                 style={{ animationDelay: '300ms', textShadow: '1px 1px 1px rgba(0, 0, 0, 0.7)' }}
