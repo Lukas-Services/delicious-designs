@@ -4,37 +4,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Instagram, Phone, Mail } from 'lucide-react';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   // Close mobile menu when changing routes
-  useEffect(() => {
+  React.useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'py-2 bg-primary/90 backdrop-blur-md shadow-sm' : 'py-4 bg-white shadow-sm'
-      }`}
-    >
+    <header className="fixed top-0 left-0 w-full z-50 py-4 bg-white shadow-sm transition-all duration-300">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
               alt="Das Kuchenhaus" 
-              className={`h-12 md:h-16 ${isScrolled ? 'brightness-[2]' : ''}`}
+              className="h-12 md:h-16"
             />
           </Link>
 
@@ -42,22 +28,19 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
-              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : 'text-primary/90 hover:text-primary after:bg-primary'} ${location.pathname === '/' ? 'nav-link-active' : ''}`} 
-              style={{ animationDelay: '100ms' }}
+              className={`nav-link py-2 text-primary/90 hover:text-primary after:bg-primary ${location.pathname === '/' ? 'nav-link-active' : ''}`}
             >
               Home
             </Link>
             <Link 
               to="/contact" 
-              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : 'text-primary/90 hover:text-primary after:bg-primary'} ${location.pathname === '/contact' ? 'nav-link-active' : ''}`}
-              style={{ animationDelay: '400ms' }}
+              className={`nav-link py-2 text-primary/90 hover:text-primary after:bg-primary ${location.pathname === '/contact' ? 'nav-link-active' : ''}`}
             >
               Kontakt
             </Link>
             <Link 
               to="/impressum" 
-              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : 'text-primary/90 hover:text-primary after:bg-primary'} ${location.pathname === '/impressum' ? 'nav-link-active' : ''}`}
-              style={{ animationDelay: '500ms' }}
+              className={`nav-link py-2 text-primary/90 hover:text-primary after:bg-primary ${location.pathname === '/impressum' ? 'nav-link-active' : ''}`}
             >
               Impressum
             </Link>
@@ -69,22 +52,19 @@ const Navbar = () => {
               href="https://www.instagram.com/cafefrechen" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-primary/80 hover:text-primary'} transition-colors animate-fade-down`}
-              style={{ animationDelay: '500ms' }}
+              className="text-primary/80 hover:text-primary transition-colors"
             >
               <Instagram className="h-5 w-5" />
             </a>
             <a 
               href="tel:+492234 59561" 
-              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-primary/80 hover:text-primary'} transition-colors animate-fade-down`}
-              style={{ animationDelay: '600ms' }}
+              className="text-primary/80 hover:text-primary transition-colors"
             >
               <Phone className="h-5 w-5" />
             </a>
             <a 
               href="mailto:cafe.frechen@gmail.com" 
-              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-primary/80 hover:text-primary'} transition-colors animate-fade-down`}
-              style={{ animationDelay: '700ms' }}
+              className="text-primary/80 hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />
             </a>
@@ -92,7 +72,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full ${isScrolled ? 'bg-white/20 text-white' : 'bg-primary/10 text-primary'}`}
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
           >
@@ -103,29 +83,26 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-white text-white flex flex-col animate-fade-in" style={{ top: '60px' }}>
+        <div className="md:hidden fixed inset-0 z-40 bg-primary/95 text-white flex flex-col animate-fade-in" style={{ top: '60px' }}>
           <div className="container mx-auto px-4 py-8 flex-grow overflow-y-auto">
             <nav className="flex flex-col space-y-6">
               <Link 
                 to="/" 
-                className={`text-xl ${location.pathname === '/' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '100ms' }}
+                className={`text-xl ${location.pathname === '/' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/contact" 
-                className={`text-xl ${location.pathname === '/contact' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '250ms' }}
+                className={`text-xl ${location.pathname === '/contact' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Kontakt
               </Link>
               <Link 
                 to="/impressum" 
-                className={`text-xl ${location.pathname === '/impressum' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '300ms' }}
+                className={`text-xl ${location.pathname === '/impressum' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Impressum
