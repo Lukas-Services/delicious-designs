@@ -72,7 +72,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary"
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-full text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
             >
