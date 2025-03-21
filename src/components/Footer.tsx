@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <img 
               src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
-              alt="Kuchenhaus" 
+              alt="Das Kuchenhaus" 
               className="h-16"
             />
             <p className="text-foreground/80 max-w-xs">
@@ -46,15 +46,15 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-2 text-foreground/70" />
-                <span className="text-foreground/80">Montag - Freitag: 8:00 - 18:00</span>
+                <span className="text-foreground/80">Montag - Freitag: 9:00 - 17:00</span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-2 text-foreground/70" />
-                <span className="text-foreground/80">Samstag: 8:00 - 16:00</span>
+                <span className="text-foreground/80">Samstag: 9:00 - 16:00</span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-2 text-foreground/70" />
-                <span className="text-foreground/80">Sonntag: 10:00 - 16:00</span>
+                <span className="text-foreground/80">Sonntag: 9:00 - 17:00</span>
               </div>
             </div>
             <div className="pt-2">

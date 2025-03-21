@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Ubuntu', 'sans-serif'],
-				serif: ['Ubuntu', 'sans-serif'],
+				sans: ['Roboto', 'sans-serif'],
+				serif: ['Roboto', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

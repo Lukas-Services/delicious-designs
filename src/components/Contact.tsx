@@ -71,7 +71,7 @@ const Contact = () => {
             </div>
             <div className="w-full h-[450px]">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d148.22106622617747!2d6.807643264398876!3d50.909655810297984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf3bd14df34ae7%3A0x20595b3da005c64a!2sDAS%20KUCHENHAUS!5e1!3m2!1sde!2sde!4v1742555201135!5m2!1sde!2sde" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d630.7471352308731!2d6.806397175822296!3d50.909733393667054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf3bd14df34ae7%3A0x20595b3da005c64a!2sDAS%20KUCHENHAUS!5e0!3m2!1sde!2sde!4v1742556423107!5m2!1sde!2sde" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
