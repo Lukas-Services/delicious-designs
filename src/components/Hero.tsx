@@ -7,7 +7,7 @@ const slides = [
   {
     id: 1,
     image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_Pinsa_Flammkuchen_Torten_schmal.jpg",
-    title: "Willkommen im Kuchen-Haus",
+    title: "Willkommen im Kuchenhaus",
     description: "Genießen Sie unsere köstlichen Torten und Kuchen"
   },
   {
