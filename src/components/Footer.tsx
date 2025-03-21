@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '100ms' }}>
-            <h3 className="text-xl font-serif font-medium">Kuchen-Haus Frechen</h3>
+            <h3 className="text-xl font-serif font-medium">Das Kuchenhaus</h3>
             <p className="text-foreground/80 max-w-xs">
               Genießen Sie täglich frische Kuchen, Torten und andere Köstlichkeiten in unserem gemütlichen Café in Frechen.
             </p>
@@ -57,7 +57,7 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 mt-1 text-foreground/70" />
                 <span className="text-foreground/80">
-                  Hauptstraße 123<br/>
+                  Hauptstraße 115<br/>
                   50226 Frechen
                 </span>
               </div>
@@ -88,7 +88,7 @@ const Footer = () => {
 
         <div className="border-t border-foreground/10 mt-12 pt-6 text-center animate-fade-in">
           <p className="text-foreground/60 text-sm">
-            &copy; {new Date().getFullYear()} Kuchen-Haus Frechen. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} Das Kuchenhaus, Frechen. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>
