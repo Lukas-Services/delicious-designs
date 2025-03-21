@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -30,7 +29,6 @@ const Hero = () => {
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
-    // Preload images
     slides.forEach((slide, index) => {
       const img = new Image();
       img.src = slide.image;
@@ -65,12 +63,9 @@ const Hero = () => {
             currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 z-10"></div>
           
-          {/* Image */}
           <div className="absolute inset-0 w-full h-full">
-            <div className={isLoading && currentSlide === index ? "w-full h-full image-loading" : "hidden"}></div>
             <img 
               src={slide.image} 
               alt={slide.title} 
@@ -79,36 +74,25 @@ const Hero = () => {
             />
           </div>
           
-          {/* Content */}
-          <div className="relative z-20 h-full flex items-center justify-center text-white px-4">
-            <div className="max-w-4xl text-center">
+          <div className="relative z-20 h-full flex items-center justify-center text-gray-100 px-4">
+            <div className="max-w-4xl text-center bg-black/50 p-6 rounded-lg">
               <h1 
-                className="text-4xl md:text-6xl font-serif font-semibold mb-4 animate-fade-up"
+                className="text-5xl md:text-7xl font-serif font-semibold mb-4 drop-shadow-lg animate-fade-up"
                 style={{ animationDelay: '300ms' }}
               >
                 {slide.title}
               </h1>
               <p 
-                className="text-xl md:text-2xl opacity-90 mb-8 animate-fade-up"
+                className="text-2xl md:text-3xl opacity-90 mb-8 drop-shadow-md animate-fade-up"
                 style={{ animationDelay: '500ms' }}
               >
                 {slide.description}
               </p>
-            {/* <div className="animate-fade-up" style={{ animationDelay: '700ms' }}>
-                <Link
-                  to="/menu"
-                  className="inline-flex items-center bg-white text-foreground px-6 py-3 rounded-md hover:bg-white/90 transition-colors"
-                >
-                  Unser Angebot
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div> */}
             </div>
           </div>
         </div>
       ))}
 
-      {/* Slide indicators */}
       <div className="absolute bottom-10 left-0 right-0 z-30 flex justify-center space-x-2">
         {slides.map((_, index) => (
           <button
