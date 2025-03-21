@@ -20,7 +20,8 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
                 alt="Das Kuchenhaus" 
-                className="h-14 md:h-20" // Increased size for more prominence
+                className="h-14 md:h-20 drop-shadow-sm" // Added drop shadow
+                style={{ filter: 'drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.8))' }} // Custom 1px black shadow
               />
             </Link>
 
