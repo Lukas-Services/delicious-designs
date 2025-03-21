@@ -31,7 +31,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <span className="text-xl md:text-2xl font-serif font-semibold animate-fade-in">Das Kuchenhaus</span>
+            <img 
+              src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
+              alt="Kuchenhaus" 
+              className="h-12 md:h-16"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,20 +46,6 @@ const Navbar = () => {
               style={{ animationDelay: '100ms' }}
             >
               Home
-            </Link>
-            <Link 
-              to="/menu" 
-              className={`nav-link py-2 animate-fade-down ${location.pathname === '/menu' ? 'nav-link-active' : ''}`}
-              style={{ animationDelay: '200ms' }}
-            >
-              Menü
-            </Link>
-            <Link 
-              to="/about" 
-              className={`nav-link py-2 animate-fade-down ${location.pathname === '/about' ? 'nav-link-active' : ''}`}
-              style={{ animationDelay: '300ms' }}
-            >
-              Über Uns
             </Link>
             <Link 
               to="/contact" 
@@ -118,31 +108,15 @@ const Navbar = () => {
             <nav className="flex flex-col space-y-6">
               <Link 
                 to="/" 
-                className={`text-xl font-serif ${location.pathname === '/' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
+                className={`text-xl ${location.pathname === '/' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
                 style={{ animationDelay: '100ms' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
-                to="/menu" 
-                className={`text-xl font-serif ${location.pathname === '/menu' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '150ms' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Menü
-              </Link>
-              <Link 
-                to="/about" 
-                className={`text-xl font-serif ${location.pathname === '/about' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '200ms' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Über Uns
-              </Link>
-              <Link 
                 to="/contact" 
-                className={`text-xl font-serif ${location.pathname === '/contact' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
+                className={`text-xl ${location.pathname === '/contact' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
                 style={{ animationDelay: '250ms' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -150,7 +124,7 @@ const Navbar = () => {
               </Link>
               <Link 
                 to="/impressum" 
-                className={`text-xl font-serif ${location.pathname === '/impressum' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
+                className={`text-xl ${location.pathname === '/impressum' ? 'text-primary font-medium' : 'text-foreground/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
                 style={{ animationDelay: '300ms' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

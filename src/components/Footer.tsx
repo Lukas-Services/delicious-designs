@@ -9,7 +9,11 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '100ms' }}>
-            <h3 className="text-xl font-serif font-medium">Das Kuchenhaus</h3>
+            <img 
+              src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
+              alt="Kuchenhaus" 
+              className="h-16"
+            />
             <p className="text-foreground/80 max-w-xs">
               Genießen Sie täglich frische Kuchen, Torten und andere Köstlichkeiten in unserem gemütlichen Café in Frechen.
             </p>
@@ -38,7 +42,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '200ms' }}>
-            <h3 className="text-xl font-serif font-medium">Öffnungszeiten</h3>
+            <h3 className="text-xl font-medium">Öffnungszeiten</h3>
             <div className="space-y-2">
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-2 text-foreground/70" />
@@ -65,16 +69,10 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '300ms' }}>
-            <h3 className="text-xl font-serif font-medium">Links</h3>
+            <h3 className="text-xl font-medium">Links</h3>
             <nav className="flex flex-col space-y-2">
               <Link to="/" className="text-foreground/80 hover:text-foreground transition-colors">
                 Home
-              </Link>
-              <Link to="/menu" className="text-foreground/80 hover:text-foreground transition-colors">
-                Menü
-              </Link>
-              <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors">
-                Über Uns
               </Link>
               <Link to="/contact" className="text-foreground/80 hover:text-foreground transition-colors">
                 Kontakt
