@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_Pinsa_Flammkuchen_Torten_schmal.jpg",
+    image: "/lovable-uploads/Kuchenhaus_frechen_Pinsa_Flammkuchen_Torten_schmal.jpg",
     title: "Willkommen im Kuchenhaus",
     description: "Genießen Sie unsere köstlichen Torten und Kuchen"
   },
   {
     id: 2,
-    image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_torte_konditor_meisterbetrieb_kuchen_kaffee_fruehstueck_schmal.jpg",
+    image: "/lovable-uploads/Kuchenhaus_frechen_torte_konditor_meisterbetrieb_kuchen_kaffee_fruehstueck_schmal.jpg",
     title: "Hausgemachte Spezialitäten",
     description: "Handgefertigt mit den besten Zutaten"
   },
   {
     id: 3,
-    image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_torten_kaffee_kuchen_snacks_fruehstueck_schmal.jpg",
+    image: "/lovable-uploads/Kuchenhaus_frechen_torten_kaffee_kuchen_snacks_fruehstueck_schmal.jpg",
     title: "Gemütliches Ambiente",
     description: "Der perfekte Ort zum Entspannen und Genießen"
   }
@@ -78,13 +78,13 @@ const Hero = () => {
             <div className="max-w-4xl text-center bg-black/50 p-6 rounded-lg">
               <h1 
                 className="text-5xl md:text-7xl font-serif font-semibold mb-4 drop-shadow-lg animate-fade-up"
-                style={{ animationDelay: '300ms' }}
+                style={{ animationDelay: '300ms', textShadow: '1px 1px 1px rgba(0, 0, 0, 0.7)' }}
               >
                 {slide.title}
               </h1>
               <p 
                 className="text-2xl md:text-3xl opacity-90 mb-8 drop-shadow-md animate-fade-up"
-                style={{ animationDelay: '500ms' }}
+                style={{ animationDelay: '500ms', textShadow: '1px 1px 1px rgba(0, 0, 0, 0.7)' }}
               >
                 {slide.description}
               </p>
