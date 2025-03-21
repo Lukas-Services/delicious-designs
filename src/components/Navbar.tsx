@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'py-2 bg-primary/90 backdrop-blur-md shadow-sm' : 'py-4 bg-transparent'
+        isScrolled ? 'py-2 bg-primary/90 backdrop-blur-md shadow-sm' : 'py-4 bg-white shadow-sm'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -34,7 +34,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
               alt="Das Kuchenhaus" 
-              className={`h-12 md:h-16 ${isScrolled ? 'brightness-[2]' : 'drop-shadow-md'}`}
+              className={`h-12 md:h-16 ${isScrolled ? 'brightness-[2]' : ''}`}
             />
           </Link>
 
@@ -42,21 +42,21 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
-              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : ''} ${location.pathname === '/' ? 'nav-link-active' : ''}`} 
+              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : 'text-primary/90 hover:text-primary after:bg-primary'} ${location.pathname === '/' ? 'nav-link-active' : ''}`} 
               style={{ animationDelay: '100ms' }}
             >
               Home
             </Link>
             <Link 
               to="/contact" 
-              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : ''} ${location.pathname === '/contact' ? 'nav-link-active' : ''}`}
+              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : 'text-primary/90 hover:text-primary after:bg-primary'} ${location.pathname === '/contact' ? 'nav-link-active' : ''}`}
               style={{ animationDelay: '400ms' }}
             >
               Kontakt
             </Link>
             <Link 
               to="/impressum" 
-              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : ''} ${location.pathname === '/impressum' ? 'nav-link-active' : ''}`}
+              className={`nav-link py-2 animate-fade-down ${isScrolled ? 'text-white/90 hover:text-white after:bg-white' : 'text-primary/90 hover:text-primary after:bg-primary'} ${location.pathname === '/impressum' ? 'nav-link-active' : ''}`}
               style={{ animationDelay: '500ms' }}
             >
               Impressum
@@ -69,21 +69,21 @@ const Navbar = () => {
               href="https://www.instagram.com/cafefrechen" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80 hover:text-foreground'} transition-colors animate-fade-down`}
+              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-primary/80 hover:text-primary'} transition-colors animate-fade-down`}
               style={{ animationDelay: '500ms' }}
             >
               <Instagram className="h-5 w-5" />
             </a>
             <a 
               href="tel:+492234 59561" 
-              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80 hover:text-foreground'} transition-colors animate-fade-down`}
+              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-primary/80 hover:text-primary'} transition-colors animate-fade-down`}
               style={{ animationDelay: '600ms' }}
             >
               <Phone className="h-5 w-5" />
             </a>
             <a 
               href="mailto:cafe.frechen@gmail.com" 
-              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/80 hover:text-foreground'} transition-colors animate-fade-down`}
+              className={`${isScrolled ? 'text-white/80 hover:text-white' : 'text-primary/80 hover:text-primary'} transition-colors animate-fade-down`}
               style={{ animationDelay: '700ms' }}
             >
               <Mail className="h-5 w-5" />
@@ -92,7 +92,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full ${isScrolled ? 'bg-white/20 text-white' : 'bg-primary/80 text-white'} shadow-sm`}
+            className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full ${isScrolled ? 'bg-white/20 text-white' : 'bg-primary/10 text-primary'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
           >
