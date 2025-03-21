@@ -94,7 +94,7 @@ const Hero = () => {
               >
                 {slide.description}
               </p>
-              <div className="animate-fade-up" style={{ animationDelay: '700ms' }}>
+            {/* <div className="animate-fade-up" style={{ animationDelay: '700ms' }}>
                 <Link
                   to="/menu"
                   className="inline-flex items-center bg-white text-foreground px-6 py-3 rounded-md hover:bg-white/90 transition-colors"
@@ -102,7 +102,7 @@ const Hero = () => {
                   Unser Angebot
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
