@@ -71,7 +71,7 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm py-3`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm py-2`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">

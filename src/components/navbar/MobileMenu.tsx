@@ -16,7 +16,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) => {
     <div 
       className="md:hidden fixed left-0 right-0 bottom-0 z-30 flex flex-col animate-fade-in"
       style={{ 
-        top: '88px', // Reduced by 1px to prevent gap
+        top: '80px', // Reduced by 1px to prevent gap
         height: 'calc(100vh - 70px)',
         background: '#fff',
       }}
