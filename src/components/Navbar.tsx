@@ -24,6 +24,19 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
+  
+  // Control body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
@@ -49,7 +62,7 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm ${
-        isScrolled ? 'py-1' : 'py-2'
+        isScrolled ? 'py-2' : 'py-3'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -62,7 +75,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/8c556cb5-5a1c-477b-beb9-ba11812bedce.png" 
               alt="Das Kuchenhaus" 
-              className="h-10 md:h-12"
+              className="h-12 md:h-14"
             />
           </a>
 
@@ -123,11 +136,11 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
           >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
@@ -135,15 +148,15 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 z-40 bg-primary/95 text-white flex flex-col animate-fade-in" 
-          style={{ top: isMobile ? '52px' : '60px' }}
+          className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in" 
+          style={{ top: isMobile ? '56px' : '64px' }}
         >
           <div className="container mx-auto px-4 py-8 flex-grow overflow-y-auto">
             <nav className="flex flex-col space-y-6">
               <a 
                 href="/"
                 onClick={(e) => handleNavClick(e, '/')}
-                className={`text-xl ${location.pathname === '/' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors animate-fade-down flex items-center justify-center`}
+                className={`text-xl ${location.pathname === '/' ? 'text-primary font-medium' : 'text-primary/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
                 style={{ animationDelay: '100ms' }}
               >
                 Home
@@ -151,7 +164,7 @@ const Navbar = () => {
               <a 
                 href="/contact"
                 onClick={(e) => handleNavClick(e, '/contact')}
-                className="text-xl text-white/90 hover:text-white py-2 transition-colors animate-fade-down flex items-center justify-center"
+                className="text-xl text-primary/90 hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center"
                 style={{ animationDelay: '250ms' }}
               >
                 Kontakt
@@ -159,42 +172,42 @@ const Navbar = () => {
               <a 
                 href="/impressum"
                 onClick={(e) => handleNavClick(e, '/impressum')}
-                className={`text-xl ${location.pathname === '/impressum' ? 'text-white font-medium' : 'text-white/90'} hover:text-white py-2 transition-colors animate-fade-down flex items-center justify-center`}
+                className={`text-xl ${location.pathname === '/impressum' ? 'text-primary font-medium' : 'text-primary/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
                 style={{ animationDelay: '300ms' }}
               >
                 Impressum
               </a>
             </nav>
             
-            <div className="flex justify-center items-center space-x-8 mt-12 pt-8 border-t border-white/20">
+            <div className="flex justify-center items-center space-x-8 mt-12 pt-8 border-t border-primary/20">
               <a 
                 href="https://www.instagram.com/cafefrechen" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex flex-col items-center text-white/80 hover:text-white transition-colors animate-fade-in"
+                className="flex flex-col items-center text-primary/80 hover:text-primary transition-colors animate-fade-in"
                 style={{ animationDelay: '350ms' }}
               >
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-2">
                   <Instagram className="h-6 w-6" />
                 </div>
                 <span className="text-sm">Instagram</span>
               </a>
               <a 
                 href="tel:+492234 59561" 
-                className="flex flex-col items-center text-white/80 hover:text-white transition-colors animate-fade-in"
+                className="flex flex-col items-center text-primary/80 hover:text-primary transition-colors animate-fade-in"
                 style={{ animationDelay: '400ms' }}
               >
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-2">
                   <Phone className="h-6 w-6" />
                 </div>
                 <span className="text-sm">Anrufen</span>
               </a>
               <a 
                 href="mailto:cafe.frechen@gmail.com" 
-                className="flex flex-col items-center text-white/80 hover:text-white transition-colors animate-fade-in"
+                className="flex flex-col items-center text-primary/80 hover:text-primary transition-colors animate-fade-in"
                 style={{ animationDelay: '450ms' }}
               >
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-2">
                   <Mail className="h-6 w-6" />
                 </div>
                 <span className="text-sm">Email</span>
