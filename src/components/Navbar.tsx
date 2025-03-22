@@ -159,13 +159,16 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Fixed the position to be below the navbar header */}
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in scrollbar-none" 
-          style={{ top: isMobile ? '68px' : '76px' }}
+          className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in overflow-hidden"
+          style={{ 
+            top: '70px', // Position below navbar
+            height: 'calc(100% - 70px)' // Adjust height to fill remaining space
+          }}
         >
-          <div className="container mx-auto px-4 py-8 flex-grow overflow-auto scrollbar-none">
+          <div className="container mx-auto px-4 py-8 flex-grow overflow-hidden">
             <nav className="flex flex-col space-y-6">
               <a 
                 href="/"
