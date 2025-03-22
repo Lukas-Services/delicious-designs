@@ -5,19 +5,19 @@ import { ChevronRight } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    image: "/lovable-uploads/edf2ffac-59cf-4c35-a9bb-171399f9105c.png",
+    image: "/lovable-uploads/59b0f9d2-0ff5-4573-9b77-c7f1d43124ad.png",
     title: "Willkommen im Kuchenhaus",
     description: "Genießen Sie unsere köstlichen Torten und Kuchen"
   },
   {
     id: 2,
-    image: "/lovable-uploads/59b0f9d2-0ff5-4573-9b77-c7f1d43124ad.png",
+    image: "/lovable-uploads/edf2ffac-59cf-4c35-a9bb-171399f9105c.png",
     title: "Hausgemachte Spezialitäten",
     description: "Handgefertigt mit den besten Zutaten"
   },
   {
     id: 3,
-    image: "/lovable-uploads/ae7eba97-13e8-4f4f-b8e9-931c2a67016b.png",
+    image: "/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png",
     title: "Gemütliches Ambiente",
     description: "Der perfekte Ort zum Entspannen und Genießen"
   }
@@ -87,10 +87,10 @@ const Hero = () => {
           </div>
           
           {/* Content */}
-          <div className="relative z-20 h-full flex items-center justify-center text-white px-4">
+          <div className="relative z-20 h-full flex items-center justify-center text-white px-4 [text-shadow:_1px_1px_1px_rgba(0,0,0,0.5)]">
             <div className="max-w-4xl text-center">
               <h1 
-                className="text-4xl md:text-6xl font-serif font-semibold mb-4 animate-fade-up"
+                className="text-4xl md:text-6xl font-serif font-semibold mb-4 animate-fade-up [text-shadow:_1px_1px_1px_rgba(0,0,0,0.5)]"
                 style={{ animationDelay: '300ms' }}
               >
                 {slide.title}
