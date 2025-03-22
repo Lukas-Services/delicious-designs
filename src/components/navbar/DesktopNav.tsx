@@ -19,14 +19,14 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ onNavClick }) => {
       >
         Home
       </a>
-      <a 
+      {/* <a 
         href="#features"
         onClick={(e) => onNavClick(e, '#features')}
         className="nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary"
         style={{ animationDelay: '200ms' }}
       >
         Unser Angebot
-      </a>
+      </a> */}
       <a 
         href="/contact"
         onClick={(e) => onNavClick(e, '/contact')}

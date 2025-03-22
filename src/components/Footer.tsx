@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <img 
-              src="/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png" 
+              src="/lovable-uploads/8c556cb5-5a1c-477b-beb9-ba11812bedce.png" 
               alt="Kuchenhaus" 
               className="h-16"
             />

@@ -14,7 +14,7 @@ const NavLogo: React.FC<NavLogoProps> = ({ onNavClick }) => {
       className="flex items-center"
     >
       <img 
-        src="/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png" 
+        src="/lovable-uploads/8c556cb5-5a1c-477b-beb9-ba11812bedce.png" 
         alt="Kuchenhaus" 
         className="h-14 md:h-16"
       />
