@@ -4,22 +4,22 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const galleryImages = [
   {
-    src: "/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png",
+    src: "/lovable-uploads/edf2ffac-59cf-4c35-a9bb-171399f9105c.png",
     alt: "Köstliche Torten und Kuchen",
     caption: "Unsere hausgemachten Torten"
   },
   {
-    src: "/lovable-uploads/59b0f9d2-0ff5-4573-9b77-c7f1d43124ad.png",
+    src: "/lovable-uploads/ae7eba97-13e8-4f4f-b8e9-931c2a67016b.png",
     alt: "Gemütliches Café Ambiente",
     caption: "Unser gemütliches Café"
   },
   {
-    src: "/lovable-uploads/edf2ffac-59cf-4c35-a9bb-171399f9105c.png",
+    src: "/lovable-uploads/59b0f9d2-0ff5-4573-9b77-c7f1d43124ad.png",
     alt: "Frische Flammkuchen",
     caption: "Knusprige Flammkuchen"
   },
   {
-    src: "/lovable-uploads/ae7eba97-13e8-4f4f-b8e9-931c2a67016b.png",
+    src: "/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png",
     alt: "Frühstücksangebot",
     caption: "Unser reichhaltiges Frühstücksangebot"
   }
