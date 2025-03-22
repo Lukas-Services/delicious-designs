@@ -74,7 +74,7 @@ const Footer = () => {
               <Link to="/" className="text-foreground/80 hover:text-foreground transition-colors">
                 Home
               </Link>
-              <a 
+              {/* <a 
                 href="#features" 
                 onClick={(e) => {
                   e.preventDefault();
@@ -86,7 +86,7 @@ const Footer = () => {
                 className="text-foreground/80 hover:text-foreground transition-colors"
               >
                 Unser Angebot
-              </a>
+              </a> */}
               <Link to="/contact" className="text-foreground/80 hover:text-foreground transition-colors">
                 Kontakt
               </Link>
