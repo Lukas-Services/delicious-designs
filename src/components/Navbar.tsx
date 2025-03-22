@@ -1,8 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Instagram, Phone, Mail } from 'lucide-react';
 import { useIsMobile } from '../hooks/use-mobile';
+import NavLogo from './navbar/NavLogo';
+import DesktopNav from './navbar/DesktopNav';
+import SocialIcons from './navbar/SocialIcons';
+import MobileMenuButton from './navbar/MobileMenuButton';
+import MobileMenu from './navbar/MobileMenu';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,174 +77,20 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a 
-            href="/"
-            onClick={(e) => handleNavClick(e, '/')} 
-            className="flex items-center"
-          >
-            <img 
-              src="/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png" 
-              alt="Kuchenhaus" 
-              className="h-14 md:h-16"
-            />
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              href="/"
-              onClick={(e) => handleNavClick(e, '/')}
-              className={`nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary ${location.pathname === '/' ? 'nav-link-active' : ''}`} 
-              style={{ animationDelay: '100ms' }}
-            >
-              Home
-            </a>
-            <a 
-              href="#features"
-              onClick={(e) => handleNavClick(e, '#features')}
-              className="nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary"
-              style={{ animationDelay: '200ms' }}
-            >
-              Unser Angebot
-            </a>
-            <a 
-              href="/contact"
-              onClick={(e) => handleNavClick(e, '/contact')}
-              className="nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary"
-              style={{ animationDelay: '300ms' }}
-            >
-              Kontakt
-            </a>
-            <a 
-              href="/impressum"
-              onClick={(e) => handleNavClick(e, '/impressum')}
-              className={`nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary ${location.pathname === '/impressum' ? 'nav-link-active' : ''}`}
-              style={{ animationDelay: '400ms' }}
-            >
-              Impressum
-            </a>
-          </nav>
-
-          {/* Social Media Icons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a 
-              href="https://www.instagram.com/cafefrechen" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary/80 hover:text-primary transition-colors animate-fade-down"
-              style={{ animationDelay: '500ms' }}
-            >
-              <Instagram className="h-5 w-5" />
-            </a>
-            <a 
-              href="tel:+492234 59561" 
-              className="text-primary/80 hover:text-primary transition-colors animate-fade-down"
-              style={{ animationDelay: '600ms' }}
-            >
-              <Phone className="h-5 w-5" />
-            </a>
-            <a 
-              href="mailto:cafe.frechen@gmail.com" 
-              className="text-primary/80 hover:text-primary transition-colors animate-fade-down"
-              style={{ animationDelay: '700ms' }}
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden flex items-center justify-center w-10 h-10 text-primary"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <NavLogo onNavClick={handleNavClick} />
+          <DesktopNav onNavClick={handleNavClick} />
+          <SocialIcons />
+          <MobileMenuButton 
+            isOpen={isMobileMenuOpen} 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+          />
         </div>
       </div>
 
-      {/* Mobile Menu - Fixed the position to be below the navbar header */}
-      {isMobileMenuOpen && (
-        <div 
-          className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in overflow-hidden"
-          style={{ 
-            top: '70px', // Position below navbar
-            height: 'calc(100% - 70px)' // Adjust height to fill remaining space
-          }}
-        >
-          <div className="container mx-auto px-4 py-8 flex-grow overflow-hidden">
-            <nav className="flex flex-col space-y-6">
-              <a 
-                href="/"
-                onClick={(e) => handleNavClick(e, '/')}
-                className={`text-xl ${location.pathname === '/' ? 'text-primary font-medium' : 'text-primary/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '100ms' }}
-              >
-                Home
-              </a>
-              <a 
-                href="#features"
-                onClick={(e) => handleNavClick(e, '#features')}
-                className="text-xl text-primary/90 hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center"
-                style={{ animationDelay: '200ms' }}
-              >
-                Unser Angebot
-              </a>
-              <a 
-                href="/contact"
-                onClick={(e) => handleNavClick(e, '/contact')}
-                className="text-xl text-primary/90 hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center"
-                style={{ animationDelay: '250ms' }}
-              >
-                Kontakt
-              </a>
-              <a 
-                href="/impressum"
-                onClick={(e) => handleNavClick(e, '/impressum')}
-                className={`text-xl ${location.pathname === '/impressum' ? 'text-primary font-medium' : 'text-primary/90'} hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center`}
-                style={{ animationDelay: '300ms' }}
-              >
-                Impressum
-              </a>
-            </nav>
-            
-            <div className="flex justify-center items-center space-x-8 mt-12 pt-8 border-t border-primary/20">
-              <a 
-                href="https://www.instagram.com/cafefrechen" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex flex-col items-center text-primary/80 hover:text-primary transition-colors animate-fade-in"
-                style={{ animationDelay: '350ms' }}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-2">
-                  <Instagram className="h-6 w-6" />
-                </div>
-                <span className="text-sm">Instagram</span>
-              </a>
-              <a 
-                href="tel:+492234 59561" 
-                className="flex flex-col items-center text-primary/80 hover:text-primary transition-colors animate-fade-in"
-                style={{ animationDelay: '400ms' }}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-2">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <span className="text-sm">Anrufen</span>
-              </a>
-              <a 
-                href="mailto:cafe.frechen@gmail.com" 
-                className="flex flex-col items-center text-primary/80 hover:text-primary transition-colors animate-fade-in"
-                style={{ animationDelay: '450ms' }}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-2">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <span className="text-sm">Email</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onNavClick={handleNavClick} 
+      />
     </header>
   );
 };
