@@ -26,7 +26,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="features" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-accent text-accent-foreground rounded-full mb-4">
@@ -36,7 +36,7 @@ const Features = () => {
             Warum Sie uns lieben werden
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground">
-            Im Kuchen-Haus Frechen verbinden wir traditionelles Handwerk mit modernen Kreationen, um Ihnen ein unvergessliches kulinarisches Erlebnis zu bieten.
+            Im Kuchenhaus Frechen verbinden wir traditionelles Handwerk mit modernen Kreationen, um Ihnen ein unvergessliches kulinarisches Erlebnis zu bieten.
           </p>
         </div>
 

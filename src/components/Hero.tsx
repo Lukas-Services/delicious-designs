@@ -1,24 +1,23 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const slides = [
   {
     id: 1,
-    image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_Pinsa_Flammkuchen_Torten_schmal.jpg",
-    title: "Willkommen im Kuchen-Haus",
+    image: "/lovable-uploads/edf2ffac-59cf-4c35-a9bb-171399f9105c.png",
+    title: "Willkommen im Kuchenhaus",
     description: "Genießen Sie unsere köstlichen Torten und Kuchen"
   },
   {
     id: 2,
-    image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_torte_konditor_meisterbetrieb_kuchen_kaffee_fruehstueck_schmal.jpg",
+    image: "/lovable-uploads/59b0f9d2-0ff5-4573-9b77-c7f1d43124ad.png",
     title: "Hausgemachte Spezialitäten",
     description: "Handgefertigt mit den besten Zutaten"
   },
   {
     id: 3,
-    image: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_torten_kaffee_kuchen_snacks_fruehstueck_schmal.jpg",
+    image: "/lovable-uploads/ae7eba97-13e8-4f4f-b8e9-931c2a67016b.png",
     title: "Gemütliches Ambiente",
     description: "Der perfekte Ort zum Entspannen und Genießen"
   }
@@ -54,6 +53,14 @@ const Hero = () => {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
+  };
+
+  const handleScrollToFeatures = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -95,13 +102,13 @@ const Hero = () => {
                 {slide.description}
               </p>
               <div className="animate-fade-up" style={{ animationDelay: '700ms' }}>
-                <Link
-                  to="/menu"
+                <button
+                  onClick={handleScrollToFeatures}
                   className="inline-flex items-center bg-white text-foreground px-6 py-3 rounded-md hover:bg-white/90 transition-colors"
                 >
                   Unser Angebot
                   <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
+                </button>
               </div>
             </div>
           </div>

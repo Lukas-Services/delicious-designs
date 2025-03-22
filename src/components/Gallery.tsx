@@ -4,22 +4,22 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const galleryImages = [
   {
-    src: "https://cafe-frechen.de/wp-content/uploads/2024/10/nggallery_import/Kuchenhaus_frechen_torten_snacks_fruehstueck_fruechtkuchen_cafe_bistro.jpg",
+    src: "/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png",
     alt: "Köstliche Torten und Kuchen",
     caption: "Unsere hausgemachten Torten"
   },
   {
-    src: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_torte_konditor_meisterbetrieb_kuchen_kaffee_fruehstueck_schmal.jpg",
+    src: "/lovable-uploads/59b0f9d2-0ff5-4573-9b77-c7f1d43124ad.png",
     alt: "Gemütliches Café Ambiente",
     caption: "Unser gemütliches Café"
   },
   {
-    src: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_Pinsa_Flammkuchen_Torten_schmal.jpg",
+    src: "/lovable-uploads/edf2ffac-59cf-4c35-a9bb-171399f9105c.png",
     alt: "Frische Flammkuchen",
     caption: "Knusprige Flammkuchen"
   },
   {
-    src: "https://cafe-frechen.de/wp-content/uploads/2024/10/Kuchenhaus_frechen_torten_kaffee_kuchen_snacks_fruehstueck_schmal.jpg",
+    src: "/lovable-uploads/ae7eba97-13e8-4f4f-b8e9-931c2a67016b.png",
     alt: "Frühstücksangebot",
     caption: "Unser reichhaltiges Frühstücksangebot"
   }

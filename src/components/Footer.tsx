@@ -10,8 +10,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <img 
-              src="/lovable-uploads/b84a9740-d59b-4d4f-9831-e836b3bf6c54.png" 
-              alt="Das Kuchenhaus" 
+              src="/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png" 
+              alt="Kuchenhaus" 
               className="h-16"
             />
             <p className="text-foreground/80 max-w-xs">
@@ -74,6 +74,19 @@ const Footer = () => {
               <Link to="/" className="text-foreground/80 hover:text-foreground transition-colors">
                 Home
               </Link>
+              <a 
+                href="#features" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const featuresSection = document.getElementById('features');
+                  if (featuresSection) {
+                    featuresSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-foreground/80 hover:text-foreground transition-colors"
+              >
+                Unser Angebot
+              </a>
               <Link to="/contact" className="text-foreground/80 hover:text-foreground transition-colors">
                 Kontakt
               </Link>
@@ -86,7 +99,7 @@ const Footer = () => {
 
         <div className="border-t border-foreground/10 mt-12 pt-6 text-center animate-fade-in">
           <p className="text-foreground/60 text-sm">
-            &copy; {new Date().getFullYear()} Das Kuchenhaus, Frechen. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} Kuchenhaus, Frechen. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>

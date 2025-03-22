@@ -24,7 +24,27 @@ const Index = () => {
         }
       }, 100);
     }
-  }, [location.state]);
+    
+    // Check if we need to scroll to features section
+    if (location.state && location.state.scrollToFeatures) {
+      setTimeout(() => {
+        const featuresSection = document.getElementById('features');
+        if (featuresSection) {
+          featuresSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    
+    // Check hash in URL for scrolling
+    if (location.hash === '#features') {
+      setTimeout(() => {
+        const featuresSection = document.getElementById('features');
+        if (featuresSection) {
+          featuresSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen flex flex-col">

@@ -52,6 +52,12 @@ const Navbar = () => {
         // If on another page, navigate to home and then scroll to contact
         navigate('/', { state: { scrollToContact: true } });
       }
+    } else if (path === '#features') {
+      // Scroll to features section
+      const featuresSection = document.getElementById('features');
+      if (featuresSection) {
+        featuresSection.scrollIntoView({ behavior: 'smooth' });
+      }
     } else {
       navigate(path);
     }
@@ -62,7 +68,7 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-sm ${
-        isScrolled ? 'py-2' : 'py-3'
+        isScrolled ? 'py-3' : 'py-4'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -73,9 +79,9 @@ const Navbar = () => {
             className="flex items-center"
           >
             <img 
-              src="/lovable-uploads/8c556cb5-5a1c-477b-beb9-ba11812bedce.png" 
-              alt="Das Kuchenhaus" 
-              className="h-12 md:h-14"
+              src="/lovable-uploads/60d23e8d-8cc4-4752-a722-176d8b333469.png" 
+              alt="Kuchenhaus" 
+              className="h-14 md:h-16"
             />
           </a>
 
@@ -90,10 +96,18 @@ const Navbar = () => {
               Home
             </a>
             <a 
+              href="#features"
+              onClick={(e) => handleNavClick(e, '#features')}
+              className="nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary"
+              style={{ animationDelay: '200ms' }}
+            >
+              Unser Angebot
+            </a>
+            <a 
               href="/contact"
               onClick={(e) => handleNavClick(e, '/contact')}
-              className={`nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary`}
-              style={{ animationDelay: '400ms' }}
+              className="nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary"
+              style={{ animationDelay: '300ms' }}
             >
               Kontakt
             </a>
@@ -101,7 +115,7 @@ const Navbar = () => {
               href="/impressum"
               onClick={(e) => handleNavClick(e, '/impressum')}
               className={`nav-link py-2 animate-fade-down text-primary/90 hover:text-primary after:bg-primary ${location.pathname === '/impressum' ? 'nav-link-active' : ''}`}
-              style={{ animationDelay: '500ms' }}
+              style={{ animationDelay: '400ms' }}
             >
               Impressum
             </a>
@@ -136,7 +150,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full text-primary"
+            className="md:hidden flex items-center justify-center w-10 h-10 text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
           >
@@ -148,10 +162,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in" 
-          style={{ top: isMobile ? '56px' : '64px' }}
+          className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in scrollbar-none" 
+          style={{ top: isMobile ? '68px' : '76px' }}
         >
-          <div className="container mx-auto px-4 py-8 flex-grow overflow-y-auto">
+          <div className="container mx-auto px-4 py-8 flex-grow overflow-auto scrollbar-none">
             <nav className="flex flex-col space-y-6">
               <a 
                 href="/"
@@ -160,6 +174,14 @@ const Navbar = () => {
                 style={{ animationDelay: '100ms' }}
               >
                 Home
+              </a>
+              <a 
+                href="#features"
+                onClick={(e) => handleNavClick(e, '#features')}
+                className="text-xl text-primary/90 hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center"
+                style={{ animationDelay: '200ms' }}
+              >
+                Unser Angebot
               </a>
               <a 
                 href="/contact"
