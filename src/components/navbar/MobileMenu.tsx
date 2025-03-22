@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import SocialIcons from './SocialIcons';
@@ -15,10 +14,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) => {
   
   return (
     <div 
-      className="md:hidden fixed inset-0 z-40 bg-white/95 text-primary flex flex-col animate-fade-in overflow-hidden"
+      className="md:hidden fixed left-0 right-0 bottom-0 z-30 flex flex-col animate-fade-in"
       style={{ 
-        top: '70px', // Position below navbar
-        height: 'calc(100% - 70px)' // Adjust height to fill remaining space
+        top: '88px', // Reduced by 1px to prevent gap
+        height: 'calc(100vh - 70px)',
+        background: '#fff',
       }}
     >
       <div className="container mx-auto px-4 py-8 flex-grow overflow-hidden">
@@ -31,14 +31,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onNavClick }) => {
           >
             Home
           </a>
-          <a 
+          {/* <a 
             href="#features"
             onClick={(e) => onNavClick(e, '#features')}
             className="text-xl text-primary/90 hover:text-primary py-2 transition-colors animate-fade-down flex items-center justify-center"
             style={{ animationDelay: '200ms' }}
           >
             Unser Angebot
-          </a>
+          </a> */}
           <a 
             href="/contact"
             onClick={(e) => onNavClick(e, '/contact')}
